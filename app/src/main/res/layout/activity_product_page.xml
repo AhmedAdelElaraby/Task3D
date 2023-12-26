@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ProductPage">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/nofivret"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shear"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
+                android:layout_margin="@dimen/_1sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_280sdp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="1000"
+                app:iss_period="1000"
+
+                app:iss_text_align="CENTER"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="فستان قطني ملون من اتش سي"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_slider" />
+
+            <TextView
+
+                android:id="@+id/TD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/item_selected"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text=" 3D View"
+                android:textColor="#171616"
+                android:textSize="@dimen/_13sdp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_slider" />
+
+            <TextView
+
+                android:id="@+id/Doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start|center"
+                android:text="Floral-Printed Faille Gown"
+                android:textSize="@dimen/_10sdp"
+
+
+                app:layout_constraintStart_toStartOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+            <TextView
+
+                android:id="@+id/Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start|center"
+                android:text="300.00 رس"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/Doc"
+                app:layout_constraintTop_toBottomOf="@+id/Doc" />
+
+            <TextView
+
+                android:id="@+id/Size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start|center"
+                android:text="المقاس"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/Price"
+                app:layout_constraintTop_toBottomOf="@+id/Price" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/Size"
+                app:layout_constraintTop_toBottomOf="@id/Size"
+                tools:listitem="@layout/item_size"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:id="@+id/recSize"/>
+
+            <TextView
+
+                android:id="@+id/Color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start|center"
+                android:text="اللون"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/recSize"
+                app:layout_constraintTop_toBottomOf="@+id/recSize" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/Color"
+                app:layout_constraintTop_toBottomOf="@id/Color"
+                tools:listitem="@layout/item_color"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                android:id="@+id/recColor"/>
+            <TextView
+
+                android:id="@+id/Detilse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="start|center"
+                android:text="تفاصيل المنتج"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/recColor"
+                app:layout_constraintTop_toBottomOf="@+id/recColor" />
+            <TextView
+                android:id="@+id/Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start|center"
+                android:text="فستان ميدي بفتحة صدر منسدلة وحمالات رفيعة. تفصيل زمات وأزرار مزيفة في الأمام. حافة سفلية بفتحة أمامية."
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/Detilse"
+                app:layout_constraintTop_toBottomOf="@+id/Detilse" />
+
+            <TextView
+
+                android:id="@+id/codetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="start|center"
+                android:text="كود القطعه"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/Body"
+                app:layout_constraintTop_toBottomOf="@+id/Body" />
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start|center"
+                android:text="#32165498733"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/codetext"
+                app:layout_constraintTop_toBottomOf="@+id/codetext" />
+            <TextView
+                android:id="@+id/textby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start|center"
+                android:text=" تم التصميم بواسطة "
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/code"
+                app:layout_constraintTop_toBottomOf="@+id/code" />
+            <TextView
+                android:id="@+id/by"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start|center"
+                android:text=" محمد صادق "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/_13sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/textby"
+                app:layout_constraintTop_toBottomOf="@+id/textby" />
+            <TextView
+                android:id="@+id/detilseBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="start|center"
+                android:text=" محمد هو مصمم الأزياء النسائية يصمم الملابس والإكسسوارات النسائية وفقًا للاتجاهات الحالية في عالم الموضة والأساليب الفنية الحديثة."
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/by"
+                app:layout_constraintTop_toBottomOf="@+id/by" />
+            <TextView
+                android:id="@+id/order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="start|center"
+                android:text="اطلب تصميمك الخاص"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/detilseBy"
+                app:layout_constraintTop_toBottomOf="@+id/detilseBy" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_market"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/item_btn_add"
+                android:text="اشتري الآن"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                app:backgroundTintMode="add"
+                app:backgroundTint="@null"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="@+id/order"
+                app:layout_constraintStart_toStartOf="@+id/order"
+                app:layout_constraintTop_toBottomOf="@+id/order" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/item_selected"
+                app:layout_constraintEnd_toEndOf="@+id/add_market"
+                app:layout_constraintStart_toStartOf="@+id/add_market"
+                app:layout_constraintTop_toBottomOf="@+id/add_market"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/bag"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bag"
+                    android:layout_marginEnd="@dimen/_5sdp"/>
+
+                <TextView
+                    android:id="@+id/cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="أضف الى السلة"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20sdp"
+                  android:padding="@dimen/_5sdp"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
